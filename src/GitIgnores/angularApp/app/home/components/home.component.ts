@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     public sourcelines: string[] = [];
 
     constructor(private dataService: IgnoreTemplateService) {
-        this.message = 'Things from the ASP.NET Core API';
+        this.message = 'Select a language for a .gitignore template';
     }
 
     ngOnInit() {
