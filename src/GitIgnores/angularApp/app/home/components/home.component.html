@@ -1,0 +1,20 @@
+﻿<div class="container-fluid">
+
+    <h1>{{message}}</h1>
+
+    <div class="row">
+        <form class="form-inline" (ngSubmit)="getIgnoreTemplate()" #ignoreTemplateForm="ngForm">
+            <div class="form-group">
+                <!--<label class="sr-only" for="language">Language</label>-->
+                <select class="form-control" id="language" required [(ngModel)]="ignoreTemplate.name" name="language">
+                    <option *ngFor="let lang of languages" [value]="lang">{{lang}}</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!ignoreTemplateForm.valid">Load gitignore Template</button>
+        </form>
+    </div>
+
+    <div class="row">
+        <code class="ignore-template-source" *ngFor="let line of sourcelines">{{line}}<br/></code>
+    </div>
+</div>
